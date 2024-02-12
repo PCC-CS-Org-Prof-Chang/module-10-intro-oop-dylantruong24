@@ -14,15 +14,21 @@ public class TestTaxTableTools {
    @Test
    public void testGetValue()
    {
-     // create an instance of the class
-      TaxTableTools ttt = new TaxTableTools();
+      
+    TaxTableTools testTable = new TaxTableTools();
 
-     // action
-     double iResult = ttt.getTaxRate(10000);
-     // assertion
-     assertEquals(0.1, iResult);
+    double iResult = testTable.getTax(10000);
+    assertEquals(0.1, iResult);
 
-     // TODO: add more test cases for all public instance methods
+    double iResult2 = testTable.getTax(20000);
+    assertEquals(0.12, iResult2);
+
+    double iResult3 = testTable.getTax(80000);
+    assertEquals(0.22, iResult3);
+
+    double iResult4 = testTable.getTax(100000);
+    assertEquals(0.24, iResult4);
+
 
    }
 }
